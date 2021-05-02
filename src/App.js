@@ -8,9 +8,9 @@ export default function App() {
      <Weather/>
      <small>
        This website was coded by{" "}
-     <a href="https://www.linkedin.com/in/clararotsch/" target="_blank" rel="norefferer">Clara Rotsch</a>  
+     <a href="https://www.linkedin.com/in/clararotsch/" target="_blank" rel="noreferrer">Clara Rotsch</a>  
         {" "}and is open-sourced on{" "}
-     <a href="https://github.com/Primavera19476/react-weather-app-2" target="_blank" rel="norefferer">GitHub</a>
+     <a href="https://github.com/Primavera19476/react-weather-app-2" target="_blank" rel="noreferrer">GitHub</a>
      </small>
      </div>
     </div>
