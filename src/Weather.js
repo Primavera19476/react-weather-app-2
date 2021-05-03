@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import './Weather.css';
+import axios from "axios";
 
 export default function Weather () {
+  const [ready, setReady] =UseState(false);
+  const [temperature, setTemperature] =UseState(null);
+
+  function handleResponse (response) {
+    setTemperature (response.data.main.temp);
+    setReady(true);
+  }
+  
+  if (ready) {
   return(
   <div className ="Weather">
     <form>
@@ -24,7 +34,7 @@ export default function Weather () {
       <div className="clearfix">
       <img className="float-left" src="http://openweathermap.org/img/wn/10d@2x.png" alt="raining"/>
       <div className="float-left">
-      <span className="temperature">10</span>
+      <span className="temperature">{temperature}</span>
       <span className="unit">°C</span>
       </div>
       </div>
@@ -37,5 +47,13 @@ export default function Weather () {
     </ul>
     </div>
   </div>
-  </div>)
+  </div>);
+  } else {
+  let apiKey = "e43b0a6cd655b887c6853a81917a0cda";
+  let unit = "metric";
+  let city = "Vienna"
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
+  axios.get(apiUrl).then(handleResponse);
+  return ("Page Loading...");
+  }
 }
