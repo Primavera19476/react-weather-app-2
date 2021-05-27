@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div className="App">
     <div className="container">
-     <Weather/>
+     <Weather defaultCity="Vienna"/>
      <small>
        This website was coded by{" "}
      <a href="https://www.linkedin.com/in/clararotsch/" target="_blank" rel="noreferrer">Clara Rotsch</a>  
